@@ -177,7 +177,8 @@ Login to Grafana with `admin` for the username and `prom-operator` for the passw
     3. Please take a screenshot of a successful Terraform run and include that as part of your submission for the project.
 
 5. Deploy the infrastructure to zone2 (DR)
-    1. You will need to make sure the infrastructure is highly available. Please see the `requirements.md` document [here](requirements.md) for details on the requirements for making the infrastructure HA. You will modify your code to meet those requirements.
+    1. You will need to make sure the infrastructure is highly available. Please see the `requirements.md` document [here](requirements.md) for details on the requirements f
+    or making the infrastructure HA. You will modify your code to meet those requirements.
         <!-- - Each VM has 3 instances (EC2)
         - Each Kubernetes cluster has 2 nodes -->
         <!-- - The VPC has IPs in multiple availability zones.  -->

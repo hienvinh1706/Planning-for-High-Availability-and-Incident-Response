@@ -26,7 +26,6 @@ us-east-2
 | VPC             | VPC covers multiple AZs for highly availability Architecture - deploy to backup site | -           | 1   | Deploy to main site                                                               |
 
 
-
 ### Descriptions
 EC2 instances: Backend of applications running within this project, including web server, and Prometheus/Grafana for SRE work
 EC2 keypair: needed to create EC2 instances
@@ -40,11 +39,13 @@ VPC: isolated virtual network for running other AWS service like EC2
 ## DR Plan
 ### Pre-Steps:
 Git branching - create new branch for DR in another Region
+Ensure both sites configured the same
 Check for DB replica stale state
+Ensure the infrastructure is set up and working in DR site
 Prepare checklist to merge back changes when main region again reaching it stable status
 
 ## Steps:
-Deploy new code from Git to DR region
+Deploy new code from Git to DR region (automatically by health check sent from Monitoring stack)
 Switch to Replica DB Instance/Use backup data to restore DB
 Update monitoring stack to monitor in DR region
 Take down Main region after route traffic to DR region
