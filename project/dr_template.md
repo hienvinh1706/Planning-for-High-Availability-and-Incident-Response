@@ -1,10 +1,11 @@
 # Infrastructure
 
 ## AWS Zones
-us-west-1b
+us-west-1a
 us-west-1c
 us-east-2a
 us-east-2b
+us-east-2c
 
 ## Servers and Clusters
 
