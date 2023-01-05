@@ -8,7 +8,13 @@ locals {
      Terraform = "true"
    }
  }
-
+module "alb" {
+   source             = "./modules/alb"
+   ec2                = module.project_ec2.aws_instance
+   ec2_sg             = module.project_ec2.ec2_sg
+   subnet_id          = data.terraform_remote_state.vpc.outputs.public_subnet_ids
+   vpc_id             = data.terraform_remote_state.vpc.outputs.vpc_id
+ }
 #  module "vpc" {
 #    source     = "./modules/vpc"
 #    cidr_block = "10.100.0.0/16"
